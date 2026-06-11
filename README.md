@@ -107,20 +107,20 @@ func searchHandler(c *gin.Context) {
 倒排索引累计公共 gram → Dice 系数基础分 + 精确(+1.0)/前缀(+0.35)/包含(+0.25)/整词命中(×0.4)加权 →
 小顶堆取 Top-N。查询计数数组经 sync.Pool 复用,无每查询大分配。
 
-## 发布到 GitHub
+## 版本发布
+
+模块路径已固定为 `github.com/testzhaoxiaofei/templatesearch`。每次更新后:
 
 ```bash
-# 1. 全局替换模块路径为你的仓库(三处:go.mod、examples/ginserver/go.mod、import 语句)
-grep -rl 'yourname/templatesearch' --include='*.go' --include='go.mod' . \
-  | xargs sed -i 's|yourname/templatesearch|<你的GitHub用户名>/templatesearch|g'
+git add . && git commit -m "..."
+git push
+git tag v0.1.1 && git push origin v0.1.1   # 递增版本号
+```
 
-# 2. 初始化并推送
-git init && git add . && git commit -m "init"
-git remote add origin git@github.com:<你的GitHub用户名>/templatesearch.git
-git push -u origin main
+使用方按版本号拉取(首次或代理未同步时可加 GOPROXY=direct):
 
-# 3. 打版本 tag,之后即可 go get github.com/<你>/templatesearch@v0.1.0
-git tag v0.1.0 && git push origin v0.1.0
+```bash
+go get github.com/testzhaoxiaofei/templatesearch@v0.1.1
 ```
 
 ## 测试
