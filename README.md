@@ -12,7 +12,7 @@
 ## 安装
 
 ```bash
-go get github.com/yourname/templatesearch
+go get github.com/testzhaoxiaofei/templatesearch
 ```
 
 ## 快速开始
