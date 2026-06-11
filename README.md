@@ -31,7 +31,7 @@ package main
 import (
 	"fmt"
 
-	templatesearch "github.com/yourname/templatesearch"
+	templatesearch "github.com/testzhaoxiaofei/templatesearch"
 )
 
 func main() {
